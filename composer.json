@@ -3,7 +3,7 @@
     "description": "Repositories for the RedBeanPHP.",
     "type": "library",
     "license": "MIT",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "autoload": {
         "psr-4": {
             "JasterStary\\RModels\\": "src/"

@@ -33,7 +33,7 @@ class RCollection {
   * @param Callable $func
   * @return <mixed> array
   */
-  function toArray(Callable $func = null):array {
+  function toArray(?Callable $func = null):array {
     $re = [];
     foreach ($this->rows as $row) {
       $r = $row->export();
@@ -51,7 +51,7 @@ class RCollection {
   * @param Callable $func
   * @return <mixed> array
   */
-  function toModels(Callable $func = null):array {
+  function toModels(?Callable $func = null):array {
     $re = [];
     foreach ($this->rows as $row) {
       $dt = $row->box();
@@ -70,7 +70,7 @@ class RCollection {
   * @param Callable $func
   * @return <mixed> array
   */
-  public function toPages(Callable $func = null):array {
+  public function toPages(?Callable $func = null):array {
     R::debug(true);
     ob_start();
     $cnt = R::count($this->oConditions->table, $this->oConditions->countQuery, $this->oConditions->data);
