@@ -46,6 +46,23 @@ class RCollection {
   }
 
   /**
+  * toBeans
+  *
+  * @param Callable $func
+  * @return <mixed> array
+  */
+  function toBeans(?Callable $func = null):array {
+    $re = [];
+    foreach ($this->rows as $row) {
+      if (is_callable($func)) {
+        $func($row);
+      }
+      $re[] = $row;
+    }
+    return $re;
+  }
+
+  /**
   * toModels
   *
   * @param Callable $func
